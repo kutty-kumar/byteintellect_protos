@@ -1,0 +1,354 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "title": "byteintellect_protos/pkg/users_v1/users.proto",
+    "version": "version not set"
+  },
+  "paths": {
+    "/v1/users": {
+      "put": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceGetUserByEmailAndPassword",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pikachuGetUserByEmailAndPasswordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "PUT operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuGetUserByEmailAndPasswordResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceCreateUser",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pikachuUserDto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuUserOperationResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/users/{user_id}": {
+      "get": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceGetUserByExternalId",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "user_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GET operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuUserOperationResponse"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceUpdateUser",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "user_id",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pikachuUserDto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "PATCH operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuUserOperationResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/users/{user_id}/identities": {
+      "get": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceGetUserIdentities",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "user_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GET operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuGetUserIdentitiesResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceCreateUserIdentity",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "user_id",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pikachuIdentityDto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuCreateUserIdentityResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/users/{user_id}/identities/{user_identity_id}": {
+      "patch": {
+        "tags": [
+          "UserService"
+        ],
+        "operationId": "UserServiceUpdateUserIdentity",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "user_id",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "name": "user_identity_id",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pikachuIdentityDto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "PATCH operation response",
+            "schema": {
+              "$ref": "#/definitions/pikachuUpdateUserIdentityResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "coreGender": {
+      "type": "string",
+      "default": "unknown_gender",
+      "enum": [
+        "unknown_gender",
+        "male",
+        "female"
+      ]
+    },
+    "coreIdentityType": {
+      "type": "string",
+      "default": "unknown_identity_type",
+      "enum": [
+        "unknown_identity_type",
+        "email",
+        "phone"
+      ]
+    },
+    "coreStatus": {
+      "type": "string",
+      "default": "unknown_status",
+      "enum": [
+        "unknown_status",
+        "active",
+        "inactive"
+      ]
+    },
+    "pikachuCreateUserIdentityResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/pikachuIdentityDto"
+        }
+      }
+    },
+    "pikachuGetUserByEmailAndPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "pikachuGetUserByEmailAndPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/pikachuUserDto"
+        }
+      }
+    },
+    "pikachuGetUserIdentitiesResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pikachuIdentityDto"
+          }
+        }
+      }
+    },
+    "pikachuIdentityDto": {
+      "type": "object",
+      "properties": {
+        "external_id": {
+          "type": "string"
+        },
+        "identity_type": {
+          "$ref": "#/definitions/coreIdentityType"
+        },
+        "identity_value": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/coreStatus"
+        }
+      }
+    },
+    "pikachuUpdateUserIdentityResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/pikachuIdentityDto"
+        }
+      }
+    },
+    "pikachuUserDto": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "string",
+          "format": "int64"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "external_id": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "gender": {
+          "$ref": "#/definitions/coreGender"
+        },
+        "height": {
+          "type": "number",
+          "format": "double"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/coreStatus"
+        },
+        "weight": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "pikachuUserOperationResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/pikachuUserDto"
+        }
+      }
+    }
+  }
+}
