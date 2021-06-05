@@ -27,7 +27,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/pikachuGetUserByEmailAndPasswordRequest"
+              "$ref": "#/definitions/users_v1GetUserByEmailAndPasswordRequest"
             }
           }
         ],
@@ -35,7 +35,7 @@
           "201": {
             "description": "PUT operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuGetUserByEmailAndPasswordResponse"
+              "$ref": "#/definitions/users_v1GetUserByEmailAndPasswordResponse"
             }
           }
         }
@@ -51,7 +51,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/pikachuUserDto"
+              "$ref": "#/definitions/users_v1UserDto"
             }
           }
         ],
@@ -59,7 +59,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuUserOperationResponse"
+              "$ref": "#/definitions/users_v1UserOperationResponse"
             }
           }
         }
@@ -83,7 +83,7 @@
           "200": {
             "description": "GET operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuUserOperationResponse"
+              "$ref": "#/definitions/users_v1UserOperationResponse"
             }
           }
         }
@@ -105,7 +105,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/pikachuUserDto"
+              "$ref": "#/definitions/users_v1UserDto"
             }
           }
         ],
@@ -113,7 +113,7 @@
           "201": {
             "description": "PATCH operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuUserOperationResponse"
+              "$ref": "#/definitions/users_v1UserOperationResponse"
             }
           }
         }
@@ -137,7 +137,7 @@
           "200": {
             "description": "GET operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuGetUserIdentitiesResponse"
+              "$ref": "#/definitions/users_v1GetUserIdentitiesResponse"
             }
           }
         }
@@ -159,7 +159,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/pikachuIdentityDto"
+              "$ref": "#/definitions/users_v1IdentityDto"
             }
           }
         ],
@@ -167,7 +167,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuCreateUserIdentityResponse"
+              "$ref": "#/definitions/users_v1CreateUserIdentityResponse"
             }
           }
         }
@@ -197,7 +197,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/pikachuIdentityDto"
+              "$ref": "#/definitions/users_v1IdentityDto"
             }
           }
         ],
@@ -205,7 +205,7 @@
           "201": {
             "description": "PATCH operation response",
             "schema": {
-              "$ref": "#/definitions/pikachuUpdateUserIdentityResponse"
+              "$ref": "#/definitions/users_v1UpdateUserIdentityResponse"
             }
           }
         }
@@ -240,15 +240,15 @@
         "inactive"
       ]
     },
-    "pikachuCreateUserIdentityResponse": {
+    "users_v1CreateUserIdentityResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/pikachuIdentityDto"
+          "$ref": "#/definitions/users_v1IdentityDto"
         }
       }
     },
-    "pikachuGetUserByEmailAndPasswordRequest": {
+    "users_v1GetUserByEmailAndPasswordRequest": {
       "type": "object",
       "properties": {
         "email": {
@@ -259,26 +259,26 @@
         }
       }
     },
-    "pikachuGetUserByEmailAndPasswordResponse": {
+    "users_v1GetUserByEmailAndPasswordResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/pikachuUserDto"
+          "$ref": "#/definitions/users_v1UserDto"
         }
       }
     },
-    "pikachuGetUserIdentitiesResponse": {
+    "users_v1GetUserIdentitiesResponse": {
       "type": "object",
       "properties": {
         "response": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/pikachuIdentityDto"
+            "$ref": "#/definitions/users_v1IdentityDto"
           }
         }
       }
     },
-    "pikachuIdentityDto": {
+    "users_v1IdentityDto": {
       "type": "object",
       "properties": {
         "external_id": {
@@ -295,15 +295,15 @@
         }
       }
     },
-    "pikachuUpdateUserIdentityResponse": {
+    "users_v1UpdateUserIdentityResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/pikachuIdentityDto"
+          "$ref": "#/definitions/users_v1IdentityDto"
         }
       }
     },
-    "pikachuUserDto": {
+    "users_v1UserDto": {
       "type": "object",
       "properties": {
         "age": {
@@ -342,11 +342,11 @@
         }
       }
     },
-    "pikachuUserOperationResponse": {
+    "users_v1UserOperationResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/pikachuUserDto"
+          "$ref": "#/definitions/users_v1UserDto"
         }
       }
     }
