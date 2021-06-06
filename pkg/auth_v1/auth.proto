@@ -1,5 +1,5 @@
 syntax = "proto3";
-package auth_v1;
+package auth;
 import "google/api/annotations.proto";
 import "core_v1/core.proto";
 option go_package = "pkg/auth_v1;auth_v1";

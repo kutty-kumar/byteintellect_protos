@@ -27,7 +27,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/users_v1GetUserByEmailAndPasswordRequest"
+              "$ref": "#/definitions/usersGetUserByEmailAndPasswordRequest"
             }
           }
         ],
@@ -35,7 +35,7 @@
           "201": {
             "description": "PUT operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1GetUserByEmailAndPasswordResponse"
+              "$ref": "#/definitions/usersGetUserByEmailAndPasswordResponse"
             }
           }
         }
@@ -51,7 +51,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/users_v1UserDto"
+              "$ref": "#/definitions/usersUserDto"
             }
           }
         ],
@@ -59,7 +59,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1UserOperationResponse"
+              "$ref": "#/definitions/usersUserOperationResponse"
             }
           }
         }
@@ -83,7 +83,7 @@
           "200": {
             "description": "GET operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1UserOperationResponse"
+              "$ref": "#/definitions/usersUserOperationResponse"
             }
           }
         }
@@ -105,7 +105,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/users_v1UserDto"
+              "$ref": "#/definitions/usersUserDto"
             }
           }
         ],
@@ -113,7 +113,7 @@
           "201": {
             "description": "PATCH operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1UserOperationResponse"
+              "$ref": "#/definitions/usersUserOperationResponse"
             }
           }
         }
@@ -137,7 +137,7 @@
           "200": {
             "description": "GET operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1GetUserIdentitiesResponse"
+              "$ref": "#/definitions/usersGetUserIdentitiesResponse"
             }
           }
         }
@@ -159,7 +159,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/users_v1IdentityDto"
+              "$ref": "#/definitions/usersIdentityDto"
             }
           }
         ],
@@ -167,7 +167,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1CreateUserIdentityResponse"
+              "$ref": "#/definitions/usersCreateUserIdentityResponse"
             }
           }
         }
@@ -197,7 +197,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/users_v1IdentityDto"
+              "$ref": "#/definitions/usersIdentityDto"
             }
           }
         ],
@@ -205,7 +205,7 @@
           "201": {
             "description": "PATCH operation response",
             "schema": {
-              "$ref": "#/definitions/users_v1UpdateUserIdentityResponse"
+              "$ref": "#/definitions/usersUpdateUserIdentityResponse"
             }
           }
         }
@@ -240,15 +240,15 @@
         "inactive"
       ]
     },
-    "users_v1CreateUserIdentityResponse": {
+    "usersCreateUserIdentityResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/users_v1IdentityDto"
+          "$ref": "#/definitions/usersIdentityDto"
         }
       }
     },
-    "users_v1GetUserByEmailAndPasswordRequest": {
+    "usersGetUserByEmailAndPasswordRequest": {
       "type": "object",
       "properties": {
         "email": {
@@ -259,26 +259,26 @@
         }
       }
     },
-    "users_v1GetUserByEmailAndPasswordResponse": {
+    "usersGetUserByEmailAndPasswordResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/users_v1UserDto"
+          "$ref": "#/definitions/usersUserDto"
         }
       }
     },
-    "users_v1GetUserIdentitiesResponse": {
+    "usersGetUserIdentitiesResponse": {
       "type": "object",
       "properties": {
         "response": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/users_v1IdentityDto"
+            "$ref": "#/definitions/usersIdentityDto"
           }
         }
       }
     },
-    "users_v1IdentityDto": {
+    "usersIdentityDto": {
       "type": "object",
       "properties": {
         "external_id": {
@@ -295,15 +295,15 @@
         }
       }
     },
-    "users_v1UpdateUserIdentityResponse": {
+    "usersUpdateUserIdentityResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/users_v1IdentityDto"
+          "$ref": "#/definitions/usersIdentityDto"
         }
       }
     },
-    "users_v1UserDto": {
+    "usersUserDto": {
       "type": "object",
       "properties": {
         "age": {
@@ -342,11 +342,11 @@
         }
       }
     },
-    "users_v1UserOperationResponse": {
+    "usersUserOperationResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/users_v1UserDto"
+          "$ref": "#/definitions/usersUserDto"
         }
       }
     }

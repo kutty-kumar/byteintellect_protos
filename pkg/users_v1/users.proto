@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package users_v1;
+package users;
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";

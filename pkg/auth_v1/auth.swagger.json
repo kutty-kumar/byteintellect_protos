@@ -27,7 +27,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/auth_v1LoginRequest"
+              "$ref": "#/definitions/authLoginRequest"
             }
           }
         ],
@@ -35,7 +35,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/auth_v1LoginResponse"
+              "$ref": "#/definitions/authLoginResponse"
             }
           }
         }
@@ -53,7 +53,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/auth_v1LogoutRequest"
+              "$ref": "#/definitions/authLogoutRequest"
             }
           }
         ],
@@ -61,7 +61,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/auth_v1LogoutResponse"
+              "$ref": "#/definitions/authLogoutResponse"
             }
           }
         }
@@ -79,7 +79,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/auth_v1RefreshTokenRequest"
+              "$ref": "#/definitions/authRefreshTokenRequest"
             }
           }
         ],
@@ -87,7 +87,7 @@
           "201": {
             "description": "POST operation response",
             "schema": {
-              "$ref": "#/definitions/auth_v1RefreshTokenResponse"
+              "$ref": "#/definitions/authRefreshTokenResponse"
             }
           }
         }
@@ -95,7 +95,7 @@
     }
   },
   "definitions": {
-    "auth_v1AuthTokenDto": {
+    "authAuthTokenDto": {
       "type": "object",
       "properties": {
         "entity_id": {
@@ -112,7 +112,7 @@
         }
       }
     },
-    "auth_v1LoginRequest": {
+    "authLoginRequest": {
       "type": "object",
       "properties": {
         "email": {
@@ -123,15 +123,15 @@
         }
       }
     },
-    "auth_v1LoginResponse": {
+    "authLoginResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/auth_v1AuthTokenDto"
+          "$ref": "#/definitions/authAuthTokenDto"
         }
       }
     },
-    "auth_v1LogoutRequest": {
+    "authLogoutRequest": {
       "type": "object",
       "properties": {
         "refresh_token": {
@@ -139,7 +139,7 @@
         }
       }
     },
-    "auth_v1LogoutResponse": {
+    "authLogoutResponse": {
       "type": "object",
       "properties": {
         "successful": {
@@ -148,7 +148,7 @@
         }
       }
     },
-    "auth_v1RefreshTokenRequest": {
+    "authRefreshTokenRequest": {
       "type": "object",
       "properties": {
         "refresh_token": {
@@ -156,11 +156,11 @@
         }
       }
     },
-    "auth_v1RefreshTokenResponse": {
+    "authRefreshTokenResponse": {
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/auth_v1AuthTokenDto"
+          "$ref": "#/definitions/authAuthTokenDto"
         }
       }
     },
