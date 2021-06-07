@@ -5,14 +5,14 @@ option go_package = "pkg/catalog_v1;catalog_v1";
 import "core_v1/core.proto";
 import "google/api/annotations.proto";
 
-message Category{
+message CategoryDto{
   string description = 1;
   string name = 2;
   string image_url = 3;
 }
 
-message Product {
-  Category category = 1;
+message ProductDto {
+  string category_id = 1;
   float  amount = 2;
   int64 man_hours = 3;
   string image_url = 4;
@@ -20,20 +20,20 @@ message Product {
 }
 
 message CreateCategoryRequest {
-  Category payload = 1;
+  CategoryDto payload = 1;
 }
 
 message CreateCategoryResponse {
-  Category response = 1;
+  CategoryDto response = 1;
 }
 
 message UpdateCategoryRequest {
-  Category payload = 1;
+  CategoryDto payload = 1;
   string category_id = 2;
 }
 
 message UpdateCategoryResponse {
-  Category response = 1;
+  CategoryDto response = 1;
 }
 
 message GetCategoriesRequest {
@@ -43,26 +43,26 @@ message GetCategoriesRequest {
 }
 
 message GetCategoriesResponse{
-  repeated Category result = 1;
+  repeated CategoryDto result = 1;
   int64 total = 2;
   bool next_page = 3;
 }
 
 message CreateProductRequest {
-  Product payload = 1;
+  ProductDto payload = 1;
 }
 
 message CreateProductResponse {
-  Product response = 1;
+  ProductDto response = 1;
 }
 
 message UpdateProductRequest {
-  Product payload = 1;
+  ProductDto payload = 1;
   string product_id = 2;
 }
 
 message UpdateProductResponse {
-  Product response = 1;
+  ProductDto response = 1;
 }
 
 message GetProductsRequest {
@@ -72,7 +72,7 @@ message GetProductsRequest {
 }
 
 message GetProductsResponse{
-  repeated Product result = 1;
+  repeated ProductDto result = 1;
   int64 total = 2;
   bool next_page = 3;
 }

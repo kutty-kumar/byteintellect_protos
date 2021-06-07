@@ -27,7 +27,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/catalogCategory"
+              "$ref": "#/definitions/catalogCategoryDto"
             }
           }
         ],
@@ -85,7 +85,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/catalogCategory"
+              "$ref": "#/definitions/catalogCategoryDto"
             }
           }
         ],
@@ -111,7 +111,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/catalogProduct"
+              "$ref": "#/definitions/catalogProductDto"
             }
           }
         ],
@@ -169,7 +169,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/catalogProduct"
+              "$ref": "#/definitions/catalogProductDto"
             }
           }
         ],
@@ -185,7 +185,7 @@
     }
   },
   "definitions": {
-    "catalogCategory": {
+    "catalogCategoryDto": {
       "type": "object",
       "properties": {
         "description": {
@@ -203,7 +203,7 @@
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/catalogCategory"
+          "$ref": "#/definitions/catalogCategoryDto"
         }
       }
     },
@@ -211,7 +211,7 @@
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/catalogProduct"
+          "$ref": "#/definitions/catalogProductDto"
         }
       }
     },
@@ -241,7 +241,7 @@
         "result": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/catalogCategory"
+            "$ref": "#/definitions/catalogCategoryDto"
           }
         },
         "total": {
@@ -276,7 +276,7 @@
         "result": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/catalogProduct"
+            "$ref": "#/definitions/catalogProductDto"
           }
         },
         "total": {
@@ -285,15 +285,15 @@
         }
       }
     },
-    "catalogProduct": {
+    "catalogProductDto": {
       "type": "object",
       "properties": {
         "amount": {
           "type": "number",
           "format": "float"
         },
-        "category": {
-          "$ref": "#/definitions/catalogCategory"
+        "category_id": {
+          "type": "string"
         },
         "image_url": {
           "type": "string"
@@ -311,7 +311,7 @@
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/catalogCategory"
+          "$ref": "#/definitions/catalogCategoryDto"
         }
       }
     },
@@ -319,7 +319,7 @@
       "type": "object",
       "properties": {
         "response": {
-          "$ref": "#/definitions/catalogProduct"
+          "$ref": "#/definitions/catalogProductDto"
         }
       }
     }
