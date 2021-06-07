@@ -52,3 +52,6 @@ protobuf-atlas:
 	@$(GENERATOR) \
     $(PROTOBUF_ARGS) \
     $(PROJECT_ROOT)/pkg/auth_v1/auth.proto
+	@$(GENERATOR) \
+    $(PROTOBUF_ARGS) \
+    $(PROJECT_ROOT)/pkg/catalog_v1/catalog.proto

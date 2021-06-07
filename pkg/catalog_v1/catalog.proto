@@ -1,0 +1,122 @@
+syntax = "proto3";
+package catalog;
+option go_package = "pkg/catalog_v1;catalog_v1";
+
+import "core_v1/core.proto";
+import "google/api/annotations.proto";
+
+message Category{
+  string description = 1;
+  string name = 2;
+  string image_url = 3;
+}
+
+message Product {
+  Category category = 1;
+  float  amount = 2;
+  int64 man_hours = 3;
+  string image_url = 4;
+  string name = 5;
+}
+
+message CreateCategoryRequest {
+  Category payload = 1;
+}
+
+message CreateCategoryResponse {
+  Category response = 1;
+}
+
+message UpdateCategoryRequest {
+  Category payload = 1;
+  string category_id = 2;
+}
+
+message UpdateCategoryResponse {
+  Category response = 1;
+}
+
+message GetCategoriesRequest {
+  string search_text = 1;
+  int64  per_page = 2;
+  int64  page_no = 3;
+}
+
+message GetCategoriesResponse{
+  repeated Category result = 1;
+  int64 total = 2;
+  bool next_page = 3;
+}
+
+message CreateProductRequest {
+  Product payload = 1;
+}
+
+message CreateProductResponse {
+  Product response = 1;
+}
+
+message UpdateProductRequest {
+  Product payload = 1;
+  string product_id = 2;
+}
+
+message UpdateProductResponse {
+  Product response = 1;
+}
+
+message GetProductsRequest {
+  string search_text = 1;
+  int64  per_page = 2;
+  int64  page_no = 3;
+}
+
+message GetProductsResponse{
+  repeated Product result = 1;
+  int64 total = 2;
+  bool next_page = 3;
+}
+
+service CatalogService {
+  rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {
+    option(google.api.http) = {
+      post: "/v1/categories"
+      body: "payload"
+    };
+  }
+
+  rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse){
+    option(google.api.http) = {
+      patch: "/v1/categories/{category_id}"
+      body: "payload"
+    };
+  }
+
+  rpc GetCategories(GetCategoriesRequest) returns (GetCategoriesResponse){
+    option(google.api.http) = {
+      put: "/v1/categories/search"
+      body:"*"
+    };
+  }
+
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {
+    option(google.api.http) = {
+      post: "/v1/products"
+      body: "payload"
+    };
+  }
+
+  rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse){
+    option(google.api.http) = {
+      patch: "/v1/products/{product_id}"
+      body: "payload"
+    };
+  }
+
+  rpc GetProducts(GetProductsRequest) returns (GetProductsResponse){
+    option(google.api.http) = {
+      put: "/v1/products/search"
+      body:"*"
+    };
+  }
+}
