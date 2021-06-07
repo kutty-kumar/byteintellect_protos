@@ -19,6 +19,7 @@ message ProductDto {
   string image_url = 4;
   string name = 5;
   string external_id = 6;
+  string description = 7;
 }
 
 message CreateCategoryRequest {
