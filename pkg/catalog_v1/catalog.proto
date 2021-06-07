@@ -9,6 +9,7 @@ message CategoryDto{
   string description = 1;
   string name = 2;
   string image_url = 3;
+  string external_id = 4;
 }
 
 message ProductDto {
@@ -17,6 +18,7 @@ message ProductDto {
   int64 man_hours = 3;
   string image_url = 4;
   string name = 5;
+  string external_id = 6;
 }
 
 message CreateCategoryRequest {

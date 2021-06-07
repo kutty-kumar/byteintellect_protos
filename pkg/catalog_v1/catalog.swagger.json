@@ -191,6 +191,9 @@
         "description": {
           "type": "string"
         },
+        "external_id": {
+          "type": "string"
+        },
         "image_url": {
           "type": "string"
         },
@@ -293,6 +296,9 @@
           "format": "float"
         },
         "category_id": {
+          "type": "string"
+        },
+        "external_id": {
           "type": "string"
         },
         "image_url": {
